@@ -1,15 +1,14 @@
+import About from "../components/About";
 import Footer from "../components/Footer";
+import HomeComponent from "../components/Home";
 import Navbar from "../components/Navbar";
 
-type props = {
-  children: React.ReactNode;
-};
-const Layout = ({ children }: props) => {
+const Layout = () => {
   return (
-    <div className="bg-white flex flex-col min-h-screen">
+    <div className="bg-white flex flex-col h-screen">
       <Navbar />
-      {children}
-      <Footer />
+      <HomeComponent />
+      <About />
     </div>
   );
 };
