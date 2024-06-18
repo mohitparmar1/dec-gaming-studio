@@ -1,26 +1,59 @@
 import React, { useState } from "react";
-import MobileNavbar from "./MobileNavbar";
 
 function Navbar() {
   const [toggle, setToggle] = useState(false);
+
+  const handleNav = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setToggle(false); // Close the mobile menu when a link is clicked
+  };
 
   const handleToggle = () => {
     setToggle(!toggle);
     console.log(toggle);
   };
+
   return (
-    <div className="w-[100%]">
-      <div className=" text-Black p-4 gap-5 flex items-center justify-around shadow-md shadow-blac">
-        <div className="md:text-2xl lg:text-2xl font-Semibold cursor-pointer hover:text-blue-500">
-          Dec Gaming Studio{" "}
+    <div className="w-full">
+      <div className="text-black p-4 gap-5 flex items-center justify-around shadow-md shadow-black ">
+        <div className="md:text-2xl lg:text-2xl font-semibold cursor-pointer hover:text-blue-500">
+          Dec Gaming Studio
         </div>
         <div>
-          <ul className="hidden md:flex cursor-pointer lg:flex md:text-xl lg:text-lg gap-5 text-black ">
-            <li className="hover:text-blue-500">Home</li>
-            <li className="hover:text-blue-500">About</li>
-            <li className="hover:text-blue-500">Careers</li>
-            <li className="hover:text-blue-500">Training Program</li>
-            <li className="hover:text-blue-500">Contact Us</li>
+          <ul className="hidden md:flex cursor-pointer lg:flex md:text-xl lg:text-lg gap-5 text-black">
+            <li
+              className="hover:text-blue-500"
+              onClick={() => handleNav("home")}
+            >
+              Home
+            </li>
+            <li
+              className="hover:text-blue-500"
+              onClick={() => handleNav("about")}
+            >
+              About
+            </li>
+            <li
+              className="hover:text-blue-500"
+              onClick={() => handleNav("careers")}
+            >
+              Careers
+            </li>
+            <li
+              className="hover:text-blue-500"
+              onClick={() => handleNav("training")}
+            >
+              Training Program
+            </li>
+            <li
+              className="hover:text-blue-500"
+              onClick={() => handleNav("contact")}
+            >
+              Contact Us
+            </li>
           </ul>
         </div>
         <div
@@ -61,14 +94,33 @@ function Navbar() {
         </div>
       </div>
       {toggle && (
-        <div className="w-full absolute top-[54px] z-20 backdrop-blur-md bottom-10 flex lg:hidden md:hidden bg-white h-[300px]">
-          <div className="list-none text-black w-full items-center font-bold  justify-start gap-5 flex flex-col">
-            <li className=" py-2 px-3 w-full">Home</li>
-            <li className="py-2 px-3  w-full">About</li>
-            <li className=" py-2 px-3 w-full">Careers</li>
-            <li className="  py-2 px-3 w-full">Training Program</li>
-            <li className="py-2 px-3  w-full">Contact Us</li>
-          </div>
+        <div className="w-full absolute top-[54px] z-20 backdrop-blur-md flex lg:hidden md:hidden bg-white h-[300px]">
+          <ul className="list-none text-black w-full items-center font-bold justify-start gap-5 flex flex-col">
+            <li className="py-2 px-3 w-full" onClick={() => handleNav("home")}>
+              Home
+            </li>
+            <li className="py-2 px-3 w-full" onClick={() => handleNav("about")}>
+              About
+            </li>
+            <li
+              className="py-2 px-3 w-full"
+              onClick={() => handleNav("careers")}
+            >
+              Careers
+            </li>
+            <li
+              className="py-2 px-3 w-full"
+              onClick={() => handleNav("training")}
+            >
+              Training Program
+            </li>
+            <li
+              className="py-2 px-3 w-full"
+              onClick={() => handleNav("contact")}
+            >
+              Contact Us
+            </li>
+          </ul>
         </div>
       )}
     </div>
