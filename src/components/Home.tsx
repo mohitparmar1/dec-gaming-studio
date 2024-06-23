@@ -1,6 +1,13 @@
 import videoSourc from "../assets/4354243-uhd_3840_2160_25fps.mp4";
 import Img3 from "../assets/gaming-3.jpg";
+import Carousel from "../utils/Carousal";
 const HomeComponent = () => {
+  const images = [
+    "https://images.unsplash.com/photo-1560253023-3ec5d502959f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1560252719-59e35a3bbc6d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1600861194942-f883de0dfe96?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  ];
   return (
     <>
       <div className="relative w-full h-screen overflow-hidden">
@@ -150,7 +157,10 @@ const HomeComponent = () => {
           </div>
         </div>
       </div>
-      <div className="flex  flex-col justify-center items-center mx-10">
+      <div
+        id="career"
+        className="flex  flex-col justify-center items-center mx-10"
+      >
         <div className="flex items-center gap-4 text-center mb-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -168,8 +178,8 @@ const HomeComponent = () => {
           </svg>
           <h1 className="text-3xl font-bold text-blue-500 mr-14">Careers</h1>
         </div>
-        <div className="flex flex-col flex-1 lg:flex-row lg:justify-around lg:px-24 lg:py-24">
-          <div className="flex flex-col gap-3">
+        <div className="flex flex-col  flex-1 lg:flex-row lg:justify-around lg:px-24 lg:py-24">
+          <div className="flex flex-col gap-10 py-5">
             <h2 className="font-bold text-xl text-blue-500">
               <a
                 href="https://5c5bcaaebf931.site123.me/career/unity-game-developer"
@@ -210,13 +220,7 @@ const HomeComponent = () => {
               '
             </p>
           </div>
-          <div className="flex">
-            <img
-              src={Img3}
-              alt="logo"
-              className="hidden md:w-[600px] md:h-[500px] lg:w-[600px] lg:h-[500px] object-cover"
-            />
-          </div>
+          <Carousel images={images} autoPlayInterval={3000} />
         </div>
       </div>
     </>

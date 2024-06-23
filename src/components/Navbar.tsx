@@ -67,7 +67,7 @@ function Navbar() {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="size-6"
+              className="size-6 cursor-pointer transition-transform ease-in duretion-1000 transform rotate-180"
             >
               <path
                 strokeLinecap="round"
@@ -82,7 +82,7 @@ function Navbar() {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="size-6"
+              className="size-6 cursor-pointer transition-transform ease-in duration-200 "
             >
               <path
                 strokeLinecap="round"
@@ -95,7 +95,7 @@ function Navbar() {
       </div>
       {toggle && (
         <div className="w-full absolute top-[54px] z-20 backdrop-blur-md flex lg:hidden md:hidden bg-white h-[300px]">
-          <ul className="list-none text-black w-full items-center font-bold justify-start gap-5 flex flex-col">
+          <ul className="list-none text-black w-full items-center font-bold justify-start gap-5 flex flex-col cursor-pointer">
             <li className="py-2 px-3 w-full" onClick={() => handleNav("home")}>
               Home
             </li>
@@ -104,7 +104,7 @@ function Navbar() {
             </li>
             <li
               className="py-2 px-3 w-full"
-              onClick={() => handleNav("careers")}
+              onClick={() => handleNav("career")}
             >
               Careers
             </li>
