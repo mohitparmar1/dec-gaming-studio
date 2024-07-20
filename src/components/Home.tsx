@@ -10,7 +10,7 @@ const HomeComponent = () => {
   ];
   return (
     <>
-      <div className="relative w-full h-screen overflow-hidden">
+      <div className="relative w-full h-screen overflow-hidden bg-img bg-cover">
         <video
           autoPlay
           loop
@@ -18,34 +18,31 @@ const HomeComponent = () => {
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
           <source src={videoSourc} type="video/mp4" />
-          Your browser does not support the video tag.
         </video>
-        <div
-          id="home"
-          className=" relative z-10 flex  w-full h-1/2  items-center justify-start mx-auto my-24"
-        >
-          <div
-            className="flex flex-row w-1/2 h-full
-         justify-center gap-4 lg:py-10 md:py-5  mx-10  lg:bg-white md:bg-white lg:bg-opacity-70 rounded-md"
-          >
-            <div className="flex flex-col gap-5 md:mt-2 mt-10 mx-2 lg:my-10 lg:mx-10">
-              <h1 className="text-2xl lg:text-3xl font-bold text-white md:text-black lg:text-zinc-900">
-                DEC Gaming Studio Pvt Ltd
-              </h1>
-              <p className="lg:text-xl">
-                An Environment that is connecting Creative, Professional Experts
-              </p>
-              <button className="text-black bg-white  hover:bg-black hover:text-white md:text-black border-2 mt-5  rounded-md w-36 py-1">
-                Product
+        <div className="flex flex-col text-3xl md:text-4xl lg:text-5xl gap-3 py-10 px-6 md:py-20 md:px-20 lg:py-40 lg:px-44 font-sans text-white ">
+          <span className="text-[#ffff] font-bold underline ">
+            DEC Gaming Studio
+          </span>
+          <p>
+            An Environment that is
+            <span className="border-b-4 ml-2 md:border-b-6 lg:border-b-8 border-[#7F93FF]">
+              Connecting
+            </span>{" "}
+            Creative, Professional Experts
+          </p>
+          <div>
+            <p className="text-lg md:text-xl lg:text-2xl font-thin mt-3">
+              Finding new horizons for visionaries to accelerate their
+              innovation and progress.
+            </p>
+            <div className="flex flex-col md:flex-row gap-5 mt-5">
+              <button className="bg-[#6A35FF] text-base md:text-xl text-white font-bold py-2 px-4 md:py-2 md:px-6 rounded-md cursor-pointer">
+                Explore Our Services
+              </button>
+              <button className="border-2 border-[#6881FF] text-white text-base md:text-xl rounded-md py-2 px-4 md:py-2 md:px-6 cursor-pointer">
+                Learn More
               </button>
             </div>
-          </div>
-          <div className="hidden md:flex lg:flex w-1/2 h-full justify-center items-center">
-            <img
-              src={Img3}
-              alt="logo"
-              className="md:w-[400px] md:h-[310px] object-fill rounded-md"
-            />
           </div>
         </div>
       </div>
