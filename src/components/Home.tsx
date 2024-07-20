@@ -1,5 +1,5 @@
 import videoSourc from "../assets/4354243-uhd_3840_2160_25fps.mp4";
-import Img3 from "../assets/gaming-3.jpg";
+
 import Carousel from "../utils/Carousal";
 const HomeComponent = () => {
   const images = [

@@ -1,7 +1,7 @@
-import About from "../components/About";
+
 import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer";
-import HomeComponent from "../components/Home";
+
 import Navbar from "../components/Navbar";
 
 type props = {

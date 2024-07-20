@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function Navbar() {
   const [toggle, setToggle] = useState(false);
 
-  const handleNav = (id) => {
+  const handleNav = (id : string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });

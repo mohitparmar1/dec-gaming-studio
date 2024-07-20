@@ -1,22 +1,16 @@
-// src/Carousel.js
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
-const Carousel = ({ images, autoPlayInterval = 3000 }) => {
+interface CarouselProps {
+  images: string[];
+  autoPlayInterval?: number;
+}
+
+const Carousel: React.FC<CarouselProps> = ({
+  images,
+  autoPlayInterval = 3000,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const autoPlayRef = useRef();
-
-  useEffect(() => {
-    autoPlayRef.current = nextSlide;
-  });
-
-  useEffect(() => {
-    const play = () => {
-      autoPlayRef.current();
-    };
-
-    const interval = setInterval(play, autoPlayInterval);
-    return () => clearInterval(interval);
-  }, [autoPlayInterval]);
+  const autoPlayRef = useRef<() => void>();
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -27,6 +21,21 @@ const Carousel = ({ images, autoPlayInterval = 3000 }) => {
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
   };
+
+  useEffect(() => {
+    autoPlayRef.current = nextSlide;
+  }, []);
+
+  useEffect(() => {
+    const play = () => {
+      if (autoPlayRef.current) {
+        autoPlayRef.current();
+      }
+    };
+
+    const interval = setInterval(play, autoPlayInterval);
+    return () => clearInterval(interval);
+  }, [autoPlayInterval]);
 
   return (
     <div className="relative w-full max-w-4xl mx-auto overflow-hidden">
