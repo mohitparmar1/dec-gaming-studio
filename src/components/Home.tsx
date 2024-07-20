@@ -10,32 +10,32 @@ const HomeComponent = () => {
   ];
   return (
     <>
-      <div className="relative w-full h-screen overflow-hidden bg-img bg-cover">
+      <div className="relative w-full h-screen overflow-hidden bg-cover">
         <video
           autoPlay
           loop
           muted
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-full object-cover z-10"
         >
           <source src={videoSourc} type="video/mp4" />
         </video>
-        <div className="flex flex-col text-3xl md:text-4xl lg:text-5xl gap-3 py-10 px-6 md:py-20 md:px-20 lg:py-40 lg:px-44 font-sans text-white ">
-          <span className="text-[#ffff] font-bold underline ">
+        <div className="flex flex-col text-3xl md:text-4xl lg:text-5xl gap-3 py-10 px-6 md:py-20 md:px-20 lg:py-40 lg:px-44 font-sans text-white z-20">
+          <span className="text-[#ffff] font-bold underline z-20">
             DEC Gaming Studio
           </span>
-          <p>
+          <p className="z-20">
             An Environment that is
-            <span className="border-b-4 ml-2 md:border-b-6 lg:border-b-8 border-[#7F93FF]">
+            <span className="border-b-4 ml-2 z-20 md:border-b-6 lg:border-b-8 border-[#7F93FF]">
               Connecting
             </span>{" "}
             Creative, Professional Experts
           </p>
-          <div>
-            <p className="text-lg md:text-xl lg:text-2xl font-thin mt-3">
+          <div className="z-20">
+            <p className="text-lg md:text-xl lg:text-2xl font-thin mt-3 z-20">
               Finding new horizons for visionaries to accelerate their
               innovation and progress.
             </p>
-            <div className="flex flex-col md:flex-row gap-5 mt-5">
+            <div className="flex flex-col md:flex-row gap-5 mt-5 z-20">
               <button className="bg-[#6A35FF] text-base md:text-xl text-white font-bold py-2 px-4 md:py-2 md:px-6 rounded-md cursor-pointer">
                 Explore Our Services
               </button>
