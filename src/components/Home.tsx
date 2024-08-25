@@ -155,7 +155,7 @@ const HomeComponent = () => {
         </div>
       </div>
       <div
-        id="career"
+        id="careers"
         className="flex  flex-col justify-center items-center mx-10"
       >
         <div className="flex items-center gap-4 text-center mb-10">
